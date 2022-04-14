@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Club(models.Model):
+    pictureOfClub = models.ImageField(upload_to="Logo", null=True, blank=True)
     nameOfClub = models.CharField(max_length=32, null=False, blank=False)
     description = models.TextField(max_length=255, null=True, blank=True)
 
@@ -38,3 +39,4 @@ class Player(models.Model):
     secondName = models.CharField(max_length=32, null=False, blank=False)
     birth = models.DateField(null=True, blank=False)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="players_picture", null=True, blank=True)
