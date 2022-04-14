@@ -4,7 +4,6 @@ from .models import Match, ResultOfMatch, Player, Club
 
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
-    list_display = ['opponent', 'odraGoal', 'opponentGoal']
     list_filter = ('opponent',)
     search_fields = ('opponent', 'date')
 
