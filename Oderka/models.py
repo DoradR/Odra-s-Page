@@ -20,12 +20,25 @@ class ResultOfMatch(models.Model):
         return "{}".format(self.matchResult)
 
 
+class Details(models.Model):
+    type = models.CharField(max_length=32, default="Gol - ", null=True, blank=True)
+    minute = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
+
+    def __str__(self):
+        return self.match_details()
+
+    def match_details(self):
+        return "{} ({})".format(self.type, self.minute)
+
+
 class Match(models.Model):
     opponent = models.ForeignKey(Club, on_delete=models.CASCADE)
     odraGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     opponentGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
     result = models.ForeignKey(ResultOfMatch, on_delete=models.CASCADE)
+    details = models.ForeignKey(Details, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=256, null=False, blank=False)
 
     def __str__(self):
         return self.match_result()
