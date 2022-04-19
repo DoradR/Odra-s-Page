@@ -53,3 +53,14 @@ class Player(models.Model):
     birth = models.DateField(null=True, blank=False)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="players_picture", null=True, blank=True)
+
+
+class PicturesOfMatch(models.Model):
+    pictures = models.ImageField(upload_to="pictures_of_match", null=True, blank=True)
+    match = models.ForeignKey(Match, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.picture_of_match()
+
+    def picture_of_match(self):
+        return "{}".format(self.pictures)
