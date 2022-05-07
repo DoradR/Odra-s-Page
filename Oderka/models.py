@@ -44,7 +44,7 @@ class Details(models.Model):
         return self.match_details()
 
     def match_details(self):
-        return "{} ({})".format(self.type, self.minute)
+        return "{} ({} Minuta)".format(self.type, self.minute)
 
 
 class Player(models.Model):
