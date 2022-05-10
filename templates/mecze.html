@@ -15,9 +15,9 @@
 <body style="font-family: Arial; background: aliceblue;">
     <section class="header" style="background: darkgreen; color: bisque; display: flex; align-items: center; justify-content: center">
         <a href="{% url 'main_page' %}" style="margin-right: auto; margin-left: 15px"><img src="/media/header/oderkaNaglowek.png" style="width: 400px"></a>
-        <h2 style="margin: 15px"><b>O nas</b></h2>
+        <h2 style="margin: 15px"><a href="{% url 'about_page' %}" style="text-decoration: none; color: bisque"><b>O nas</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
-        <h2 style="margin: 15px"><b>Kontakt</b></h2>
+        <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
     </section>
     <section style="margin: 15px">
         <div class="row">
@@ -34,6 +34,9 @@
               </div>
             {% endfor %}
         </div>
+    </section>
+    <section style="font-size: 0.7rem; align-items: baseline; background: black; color: azure; position: fixed; width: 100%; bottom: 0">
+        <p>Page created by: Dominik Radziszewski</p>
     </section>
 </body>
 </html>

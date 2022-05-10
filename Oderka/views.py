@@ -19,3 +19,11 @@ def details_page(request, id):
         match.objects.filter(id)
 
     return render(request, 'detale.html', {'detale': details})
+
+
+def help_page(request):
+    return render(request, 'kontakt.html')
+
+
+def about_page(request):
+    return render(request, 'about.html')
