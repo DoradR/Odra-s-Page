@@ -14,11 +14,12 @@ def matches_page(request):
 def details_page(request, id):
     match = get_object_or_404(Match, pk=id)
     details = Details.objects.filter(match=match)
+    comment = match.comment
 
     if request.method == "POST":
         match.objects.filter(id)
 
-    return render(request, 'detale.html', {'detale': details})
+    return render(request, 'detale.html', {'detale': details, 'comment': comment})
 
 
 def help_page(request):
