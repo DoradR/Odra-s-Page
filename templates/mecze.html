@@ -19,15 +19,21 @@
         <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
     </section>
+    <section style="background: aqua; margin: 25px; border-radius: 25px; display: flex; justify-content: flex-end">
+        <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
+        <h3 style="margin: 15px">Wygrane</h3>
+        <h3 style="margin: 15px">Remis</h3>
+        <h3 style="margin: 15px">Przegrane</h3>
+    </section>
     <section style="margin: 15px">
         <div class="row">
             {% for mecz in mecze %}
               <div class="col-sm-4">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
+                <div class="card" style="border-radius: 12px">
+                  <img src="..." class="card-img-top" alt="..." style="width: auto; height: 150px;">
                   <div class="card-body">
                     <h5 class="card-title">{{ mecz }}</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"></p>
                     <a href="{% url 'details_page' mecz.id %}" class="btn btn-primary">Pokaż więcej</a>
                   </div>
                 </div>
@@ -35,7 +41,7 @@
             {% endfor %}
         </div>
     </section>
-    <section style="font-size: 0.7rem; align-items: baseline; background: black; color: azure; position: fixed; width: 100%; bottom: 0">
+    <section style="font-size: 0.7rem; align-items: baseline; color: dimgray; position: fixed; width: 100%; bottom: 0">
         <p>Page created by: Dominik Radziszewski</p>
     </section>
 </body>
