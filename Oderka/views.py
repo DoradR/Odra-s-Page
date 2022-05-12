@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Match, Details
+from .models import Match, Details, PicturesOfMatch, Club
 
 
 def main_page(request):
@@ -15,11 +15,15 @@ def details_page(request, id):
     match = get_object_or_404(Match, pk=id)
     details = Details.objects.filter(match=match)
     comment = match.comment
+    pictures = PicturesOfMatch.objects.filter(match=match)
+    matches = Club.objects.filter(match=match)
+    result = match.result
 
     if request.method == "POST":
         match.objects.filter(id)
 
-    return render(request, 'detale.html', {'detale': details, 'comment': comment})
+    return render(request, 'detale.html', {'detale': details, 'comment': comment, 'pictures': pictures, 'result': result,
+                                           'matches': matches})
 
 
 def help_page(request):

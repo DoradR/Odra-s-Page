@@ -8,6 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Opis meczu</title>
         <script src="https://kit.fontawesome.com/d28cd5689d.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
               rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
               crossorigin="anonymous">
@@ -19,47 +20,43 @@
             <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
             <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
         </section>
-        <section>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
+        <section style="display: flex; justify-content: center; margin: 15px; border-radius: 15px; background: black">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
+              {% for match in matches %}
                 <div class="carousel-item active">
-                  <img src="..." class="d-block w-100" alt="...">
+                  <img src="/media/{{ match.pictureOfClub }}" class="d-block w-100" style="width: 90%; height: 500px">
                 </div>
-                <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
-                </div>
+              {% endfor %}
+                {% for picture in pictures %}
+                  <div class="carousel-item">
+                    <img src="/media/{{ picture }}" class="d-block w-100" style="width: 90%; height: 500px">
+                  </div>
+                {% endfor %}
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
         </section>
-        <section>
+        <section style="margin-bottom: 50px">
             <div class="row">
                 <div class="col-sm-6">
                     <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
-                        <h1 style="display: flex; justify-content: center;">WIN</h1>
-                        <p>{{ comment }}</p>
+                        <h1 style="display: flex; justify-content: center; color: blue"><b><i>{{ result }}</i></b></h1>
+                        <p style="margin: 0px 25px">{{ comment }}</p>
                     </section>
                 </div>
                 <div class="col-sm-6">
                     <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
-                        <h1 style="display: flex; justify-content: center;">SZCZEGÓŁY</h1>
+                        <h1 style="display: flex; justify-content: center; color: blue"><b><i>SZCZEGÓŁY</i></b></h1>
                         {% for detal in detale %}
-                            <p>{{ detal }}</p>
+                            <p style="margin: 0px 25px;">{{ detal }}</p>
                         {% endfor %}
                     </section>
                 </div>

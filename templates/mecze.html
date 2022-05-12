@@ -29,13 +29,13 @@
         <div class="row">
             {% for mecz in mecze %}
               <div class="col-sm-4">
-                <div class="card" style="border-radius: 12px">
-                  <img src="..." class="card-img-top" alt="..." style="width: auto; height: 150px;">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ mecz }}</h5>
-                    <p class="card-text"></p>
-                    <a href="{% url 'details_page' mecz.id %}" class="btn btn-primary">Pokaż więcej</a>
-                  </div>
+                <div class="card" style="border-radius: 12px; margin-bottom: 25px">
+                    <img src="/media/{{ mecz.opponent.pictureOfClub }}" class="card-img-top" alt="..." style="width: auto; height: 150px;">
+                    <div class="card-body">
+                       <h5 class="card-title">{{ mecz }}</h5>
+                       <p class="card-text"></p>
+                       <a href="{% url 'details_page' mecz.id %}" class="btn btn-primary">Pokaż więcej</a>
+                    </div>
                 </div>
               </div>
             {% endfor %}
