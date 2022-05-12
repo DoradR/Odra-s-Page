@@ -49,14 +49,14 @@
                 <div class="col-sm-6">
                     <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
                         <h1 style="display: flex; justify-content: center; color: blue"><b><i>{{ result }}</i></b></h1>
-                        <p style="margin: 0px 25px">{{ comment }}</p>
+                        <p style="margin: 0px 25px; color: black; font-size: 1.1rem">{{ comment }}</p>
                     </section>
                 </div>
                 <div class="col-sm-6">
                     <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
                         <h1 style="display: flex; justify-content: center; color: blue"><b><i>SZCZEGÓŁY</i></b></h1>
                         {% for detal in detale %}
-                            <p style="margin: 0px 25px;">{{ detal }}</p>
+                            <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i>{{ detal }}</p>
                         {% endfor %}
                     </section>
                 </div>

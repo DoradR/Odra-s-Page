@@ -38,7 +38,7 @@ class Match(models.Model):
 class Details(models.Model):
     type = models.CharField(max_length=32, default="Gol - ", null=True, blank=True)
     minute = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
-    match = models.ForeignKey(Match, on_delete=models.CASCADE)
+    match = models.ManyToManyField(Match)
 
     def __str__(self):
         return self.match_details()
