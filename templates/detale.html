@@ -14,61 +14,67 @@
               crossorigin="anonymous">
     </head>
     <body style="font-family: Arial; background: aliceblue;">
-        <section class="header" style="background: darkgreen; color: bisque; display: flex; align-items: center; justify-content: center">
+        <section class="header" style="background: radial-gradient(farthest-corner at 40px 40px, #4fbc07 0%, #2485af 100%); color: bisque; display: flex; align-items: center; justify-content: center">
             <a href="{% url 'main_page' %}" style="margin-right: auto; margin-left: 15px"><img src="/media/header/oderkaNaglowek.png" style="width: 400px"></a>
             <h2 style="margin: 15px"><a href="{% url 'about_page' %}" style="text-decoration: none; color: bisque"><b>O nas</b></a></h2>
             <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
             <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
         </section>
-        <section style="display: flex; justify-content: center; margin: 15px; border-radius: 15px; background: black">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-              {% for match in matches %}
-                <div class="carousel-item active">
-                  <img src="/media/{{ match.pictureOfClub }}" class="d-block w-100" style="width: 90%; height: 500px">
-                </div>
-              {% endfor %}
-                {% for picture in pictures %}
-                  <div class="carousel-item">
-                    <img src="/media/{{ picture }}" class="d-block w-100" style="width: 90%; height: 500px">
-                  </div>
-                {% endfor %}
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
+        <section style="background: aqua; margin: 25px; border-radius: 25px; display: flex; justify-content: center">
+            <h1>ZDJĘCIA:</h1>
         </section>
-        <section style="margin-bottom: 50px">
+        <section>
             <div class="row">
                 <div class="col-sm-6">
-                    <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
-                        <h1 style="display: flex; justify-content: center; color: blue"><b><i>{{ result }}</i></b></h1>
-                        <p style="margin: 0px 25px; color: black; font-size: 1.1rem">{{ comment }}</p>
+                    <section style="display: flex; justify-content: center; margin: 15px; border-radius: 15px; background: transparent">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner">
+                          {% for match in matches %}
+                            <div class="carousel-item active">
+                              <img src="/media/{{ match.pictureOfClub }}" class="d-block w-100" style="width: 90%; height: 500px">
+                            </div>
+                          {% endfor %}
+                            {% for picture in pictures %}
+                              <div class="carousel-item">
+                                <img src="/media/{{ picture }}" class="d-block w-100" style="width: 90%; height: 500px">
+                              </div>
+                            {% endfor %}
+                          </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                        </div>
                     </section>
                 </div>
                 <div class="col-sm-6">
-                    <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
-                        <h1 style="display: flex; justify-content: center; color: blue"><b><i>SZCZEGÓŁY</i></b></h1>
-                        {% for detal in detale %}
-                            {% if detal.type.type == "GOL" %}
-                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
-                            {% elif detal.type.type == "ŻÓŁTA KARTKA" %}
-                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
-                            {% elif detal.type.type == "CZERWONA KARTKA" %}
-                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
-                            {% elif detal.type.type == "SCHODZI" %}
-                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
-                            {% elif detal.type.type == "WCHODZI" %}
-                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: green"></i> {{ detal }}</p>
-                            {% endif %}
-                            <hr style="margin: 0px">
-                        {% endfor %}
+                    <section style="margin-bottom: 50px">
+                        <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
+                            <h1 style="display: flex; justify-content: center; color: blue"><b><i>OPIS MECZU</i></b></h1>
+                            <h6 style="display: flex; justify-content: center; margin: 0px 25px; color: black; font-size: 1.5rem">{{ result }}</h6>
+                            <p style="margin: 0px 25px; color: black; font-size: 1.1rem">{{ comment }}</p>
+                        </section>
+                        <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
+                            <h1 style="display: flex; justify-content: center; color: blue"><b><i>PRZEBIEG</i></b></h1>
+                            {% for detal in detale %}
+                                {% if detal.type.type == "GOL" %}
+                                    <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                                {% elif detal.type.type == "ŻÓŁTA KARTKA" %}
+                                    <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                                {% elif detal.type.type == "CZERWONA KARTKA" %}
+                                    <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                                {% elif detal.type.type == "SCHODZI" %}
+                                    <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                                {% elif detal.type.type == "WCHODZI" %}
+                                    <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: green"></i> {{ detal }}</p>
+                                {% endif %}
+                                <hr style="margin: 0px">
+                            {% endfor %}
+                        </section>
                     </section>
                 </div>
             </div>

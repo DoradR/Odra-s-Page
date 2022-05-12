@@ -18,12 +18,15 @@ def details_page(request, id):
     pictures = PicturesOfMatch.objects.filter(match=match)
     matches = Club.objects.filter(match=match)
     result = match.result
+    odraGoal = match.odraGoal
+    opponent = match.opponent
+    opponentGoal = match.opponentGoal
 
     if request.method == "POST":
         match.objects.filter(id)
 
     return render(request, 'detale.html', {'detale': details, 'comment': comment, 'pictures': pictures, 'result': result,
-                                           'matches': matches})
+                                           'matches': matches, 'odraGoal': odraGoal, 'opponent': opponent, 'opponentGoal': opponentGoal})
 
 
 def help_page(request):
