@@ -56,7 +56,18 @@
                     <section style="margin: 10px; border-radius: 10px; background: lightgrey; height: 350px">
                         <h1 style="display: flex; justify-content: center; color: blue"><b><i>SZCZEGÓŁY</i></b></h1>
                         {% for detal in detale %}
-                            <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i>{{ detal }}</p>
+                            {% if detal.type.type == "GOL" %}
+                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                            {% elif detal.type.type == "ŻÓŁTA KARTKA" %}
+                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                            {% elif detal.type.type == "CZERWONA KARTKA" %}
+                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                            {% elif detal.type.type == "SCHODZI" %}
+                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                            {% elif detal.type.type == "WCHODZI" %}
+                                <p style="margin: 0px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: green"></i> {{ detal }}</p>
+                            {% endif %}
+                            <hr style="margin: 0px">
                         {% endfor %}
                     </section>
                 </div>

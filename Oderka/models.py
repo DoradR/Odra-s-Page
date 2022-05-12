@@ -20,6 +20,16 @@ class ResultOfMatch(models.Model):
         return "{}".format(self.matchResult)
 
 
+class TypeOfDetails(models.Model):
+    type = models.CharField(max_length=20, null=False, blank=False)
+
+    def __str__(self):
+        return self.details_type()
+
+    def details_type(self):
+        return "{}".format(self.type)
+
+
 class Match(models.Model):
     opponent = models.ForeignKey(Club, on_delete=models.CASCADE)
     odraGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
@@ -35,8 +45,23 @@ class Match(models.Model):
         return "Odra Słup {} : {} {} - {}".format(self.odraGoal, self.opponentGoal, self.opponent, self.date)
 
 
+class Player(models.Model):
+    firstName = models.CharField(max_length=32, null=False, blank=False)
+    secondName = models.CharField(max_length=32, null=False, blank=False)
+    birth = models.DateField(null=True, blank=False)
+    club = models.ForeignKey(Club, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="players_picture", null=True, blank=True)
+
+    def __str__(self):
+        return self.player_details()
+
+    def player_details(self):
+        return "{} {}".format(self.firstName, self.secondName)
+
+
 class Details(models.Model):
-    type = models.CharField(max_length=32, default="Gol - ", null=True, blank=True)
+    type = models.ForeignKey(TypeOfDetails, on_delete=models.CASCADE)
+    who = models.ForeignKey(Player, on_delete=models.CASCADE)
     minute = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
     match = models.ManyToManyField(Match)
 
@@ -44,15 +69,7 @@ class Details(models.Model):
         return self.match_details()
 
     def match_details(self):
-        return "{} ({} Minuta)".format(self.type, self.minute)
-
-
-class Player(models.Model):
-    firstName = models.CharField(max_length=32, null=False, blank=False)
-    secondName = models.CharField(max_length=32, null=False, blank=False)
-    birth = models.DateField(null=True, blank=False)
-    club = models.ForeignKey(Club, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="players_picture", null=True, blank=True)
+        return "{} - {} ({} Minuta)".format(self.type, self.who, self.minute)
 
 
 class PicturesOfMatch(models.Model):
