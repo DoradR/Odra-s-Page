@@ -22,6 +22,35 @@
     <section>
         <h1> Miejsce na nasz temat </h1>
     </section>
+    <section style="margin: 15px">
+        <h1 style="display: flex; justify-content: center; color: blue"><b><i>ZAWODNICY</i></b></h1>
+        <div class="row">
+            {% for player in players %}
+                {% if player.club.nameOfClub == 'Odra Słup' %}
+                  <div class="col-sm-4">
+                    <div class="card" style="border-radius: 12px; margin-bottom: 25px">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {% if player.image == True %}
+                                    <img src="/media/{{ player.image }}" class="card-img-top" alt="..." style="width: 150px; height: 200px;">
+                                {% else %}
+                                    <img src="/media/header/profil.jpg" class="card-img-top" alt="..." style="width: 150px; height: 200px;">
+                                {% endif %}
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card-body">
+                                   <h5 class="card-title">{{ player }}</h5>
+                                   <p class="card-text">Klub: {{ player.club }}</p>
+                                   <p class="card-text">Data urodzenia: {{ player.birth }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
     <section style="font-size: 0.7rem; align-items: baseline; color: dimgray; position: fixed; width: 100%; bottom: 0">
         <p>Page created by: Dominik Radziszewski</p>
     </section>
