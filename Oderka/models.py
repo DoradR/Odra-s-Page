@@ -43,13 +43,13 @@ class Match(models.Model):
         return self.match_result()
 
     def match_result(self):
-        return "Odra Słup {} : {} {} - {}".format(self.odraGoal, self.opponentGoal, self.opponent, self.date)
+        return "LZS Odra Słup {} : {} {} - {}".format(self.odraGoal, self.opponentGoal, self.opponent, self.date)
 
 
 class Player(models.Model):
     firstName = models.CharField(max_length=32, null=False, blank=False)
     secondName = models.CharField(max_length=32, null=False, blank=False)
-    birth = models.DateField(null=True, blank=False)
+    birth = models.DateField(null=True, blank=True)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="players_picture", null=True, blank=True)
 

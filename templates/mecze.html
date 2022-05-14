@@ -12,27 +12,24 @@
           rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous">
 </head>
-<body style="font-family: Arial; background: aliceblue;">
+<body style="font-family: Arial; background: midnightblue;">
     <section class="header" style="background: radial-gradient(farthest-corner at 40px 40px, #4fbc07 0%, #2485af 100%); color: bisque; display: flex; align-items: center; justify-content: center">
         <a href="{% url 'main_page' %}" style="margin-right: auto; margin-left: 15px"><img src="/media/header/oderkaNaglowek.png" style="width: 400px"></a>
         <h2 style="margin: 15px"><a href="{% url 'about_page' %}" style="text-decoration: none; color: bisque"><b>O nas</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
     </section>
-    <section style="background: aqua; margin: 25px; border-radius: 25px; display: flex; justify-content: flex-end">
-        <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
-        <h3 style="margin: 15px">Wygrane</h3>
-        <h3 style="margin: 15px">Remisy</h3>
-        <h3 style="margin: 15px">Przegrane</h3>
+    <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white">
+            <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
     </section>
     <section style="margin: 15px">
         <div class="row">
             {% for mecz in mecze %}
               <div class="col-sm-4">
-                <div class="card" style="border-radius: 12px; margin-bottom: 25px">
-                    <img src="/media/{{ mecz.opponent.miniature }}" class="card-img-top" alt="..." style="width: auto; height: 200px;">
-                    <div class="card-body">
-                       <h5 class="card-title">{{ mecz }}</h5>
+                <div class="card" style="border-radius: 12px; margin-bottom: 25px; height: 340px">
+                    <img src="/media/{{ mecz.opponent.miniature }}" class="card-img-top" alt="..." style="width: auto; height: 200px; border-radius: 12px 12px 0px 0px">
+                    <div class="card-body" style="border-radius: 0px 0px 12px 12px; background: black">
+                       <h5 class="card-title" style="color: white">{{ mecz }}</h5>
                        <p class="card-text"></p>
                        <a href="{% url 'details_page' mecz.id %}" class="btn btn-primary">Pokaż więcej</a>
                     </div>
@@ -41,7 +38,7 @@
             {% endfor %}
         </div>
     </section>
-    <section style="font-size: 0.7rem; align-items: baseline; color: dimgray; position: fixed; width: 100%; bottom: 0">
+    <section style="font-size: 0.7rem; align-items: baseline; color: dimgray; position: fixed; width: 100%; bottom: 0; margin-left: 10px">
         <p>Page created by: Dominik Radziszewski</p>
     </section>
 </body>
