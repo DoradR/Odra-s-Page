@@ -104,29 +104,29 @@
                         {% for detal in detale %}
                             {% if detal.type.type == "GOL" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                         {% for detal in detale %}
                             {% if detal.type.type == "ŻÓŁTA KARTKA" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "CZERWONA KARTKA" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                         {% for detal in detale %}
                             {% if detal.type.type == "SCHODZI" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                                    <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "WCHODZI" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-circle-arrow-right" style="color: green"></i> {{ detal }}</p>
+                                <p style="display: flex; justify-content: end; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
@@ -137,29 +137,29 @@
                         {% for detal in detale %}
                             {% if detal.type.type == "GOL" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                                    <p style="margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                         {% for detal in detale %}
                             {% if detal.type.type == "ŻÓŁTA KARTKA" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                                    <p style="margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "CZERWONA KARTKA" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                                    <p style="margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                         {% for detal in detale %}
                             {% if detal.type.type == "SCHODZI" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                                    <p style="margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "WCHODZI" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                <p style="margin: 10px 25px; color: black; font-size: 0.9rem"><i class="fa-solid fa-circle-arrow-right" style="color: green"></i> {{ detal }}</p>
+                                <p style="margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
