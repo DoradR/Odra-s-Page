@@ -43,7 +43,7 @@ class Match(models.Model):
         return self.match_result()
 
     def match_result(self):
-        return "LZS Odra Słup {} : {} {} - {}".format(self.odraGoal, self.opponentGoal, self.opponent, self.date)
+        return "{} - LZS Odra Słup {} : {} {}".format(self.date, self.odraGoal, self.opponentGoal, self.opponent)
 
 
 class Player(models.Model):
