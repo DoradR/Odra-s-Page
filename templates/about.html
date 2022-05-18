@@ -21,14 +21,21 @@
     </section>
     <section>
         <img src="/media/header/boisko_kopia.JPG" style="width: 96%; height: 100%; margin: 25px; border-radius: 10px;">
+        <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black">
+            <h1>Miejsce na nasz temat</h1>
+        </div>
     </section>
     <section style="margin: 15px">
-        <h1 style="display: flex; justify-content: center; color: blue"><b><i>ZAWODNICY</i></b></h1>
+        <section style="margin: 25px; border-radius: 5px; font-family: 'Bookman Old Style'; background: transparent; color: midnightblue">
+            <div style="display: flex; justify-content: center">
+                <h1>ZAWODNICY</h1>
+            </div>
+        </section>
         <div class="row">
             {% for player in players %}
                 {% if player.club.nameOfClub == 'LZS Odra Słup' %}
                   <div class="col-sm-4">
-                    <div class="card" style="border-radius: 12px; margin-bottom: 25px">
+                    <div class="card" style="border-radius: 12px; margin-bottom: 25px; box-shadow: 0 0 20px black">
                         <div class="row">
                             <div class="col-sm-4">
                                 {% if player.image == True %}
