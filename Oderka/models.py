@@ -37,7 +37,7 @@ class Match(models.Model):
     opponentGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
     result = models.ForeignKey(ResultOfMatch, on_delete=models.CASCADE)
-    comment = models.TextField(max_length=256, null=False, blank=False)
+    comment = models.TextField(max_length=516, null=False, blank=False)
 
     def __str__(self):
         return self.match_result()
