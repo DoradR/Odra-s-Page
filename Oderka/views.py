@@ -18,9 +18,9 @@ def details_page(request, id):
     match = get_object_or_404(Match, pk=id)
     details = Details.objects.filter(match=match)
     sortDetails = sorted(details, key=operator.attrgetter('minute'))
-    comment = match.comment
     pictures = PicturesOfMatch.objects.filter(match=match)
     matches = Club.objects.filter(match=match)
+    comment = match.comment
     result = match.result
     odraGoal = match.odraGoal
     opponent = match.opponent

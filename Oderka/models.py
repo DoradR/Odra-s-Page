@@ -65,6 +65,7 @@ class Details(models.Model):
     who = models.ForeignKey(Player, on_delete=models.CASCADE)
     minute = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
     match = models.ManyToManyField(Match)
+    numberOfPlayer = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
         return self.match_details()

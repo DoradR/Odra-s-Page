@@ -25,38 +25,47 @@
             <h1>Miejsce na nasz temat</h1>
         </div>
     </section>
-    <section style="margin: 15px">
+    <section style="margin: 15px; font-family: 'system-ui'">
         <section style="margin: 25px; border-radius: 5px; font-family: 'Bookman Old Style'; background: transparent; color: midnightblue">
             <div style="display: flex; justify-content: center">
                 <h1>ZAWODNICY</h1>
             </div>
         </section>
-        <div class="row">
-            {% for player in players %}
-                {% if player.club.nameOfClub == 'LZS Odra Słup' %}
-                  <div class="col-sm-4">
-                    <div class="card" style="border-radius: 12px; margin-bottom: 25px; box-shadow: 0 0 20px black">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                {% if player.image == True %}
-                                    <img src="/media/{{ player.image }}" class="card-img-top" alt="..." style="width: 150px; height: 200px; border-radius: 12px 0px 0px 12px">
-                                {% else %}
-                                    <img src="/media/header/profil.jpg" class="card-img-top" alt="..." style="width: 150px; height: 200px; border-radius: 12px 0px 0px 12px">
-                                {% endif %}
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="card-body">
-                                   <h5 class="card-title">{{ player }}</h5>
-                                   <p class="card-text">Klub: {{ player.club }}</p>
-                                   <p class="card-text">Data urodzenia: {{ player.birth }}</p>
+        <section style="height: auto; width: auto; background: transparent; border-style: solid; margin: 10px 30px 50px 30px; box-shadow: 0 0 40px black">
+            <div class="row">
+                {% for player in players %}
+                    {% if player.club.nameOfClub == 'LZS Odra Słup' %}
+                      <div class="col-sm-6">
+                        <div class="card" style="border-radius: 12px; margin: 12px; box-shadow: 0 0 20px black; background: black; color: white; border-color: #145a0c;">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    {% if player.image.url is not None %}
+                                        <img src="/media/{{ player.image }}" class="card-img-top" alt="..." style="width: 230px; height: 300px; border-radius: 12px 0px 0px 12px">
+                                    {% else %}
+                                        <img src="/media/header/profil.jpg" class="card-img-top" alt="..." style="width: 230px; height: 300px; border-radius: 12px 0px 0px 12px">
+                                    {% endif %}
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                       {% if player.secondName == 'Kąkol' %}
+                                           <h2 class="card-title" style="margin: 20px 20px 20px 25px">{{ player }}</h2>
+                                           <h3 class="card-text" style="margin: 20px 20px 20px 25px; color: red"><i class="fa-solid fa-ring"></i> KAPITAN</h3>
+                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Klub: {{ player.club }}</h4>
+                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Data urodzenia: {{ player.birth }}</h4>
+                                       {% else %}
+                                           <h2 class="card-title" style="margin: 20px 20px 20px 25px">{{ player }}</h2>
+                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Klub: {{ player.club }}</h4>
+                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Data urodzenia: {{ player.birth }}</h4>
+                                       {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                  </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+                      </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
     </section>
     <section style="font-size: 0.7rem; align-items: baseline; color: bisque; position: fixed; width: 100%; bottom: 0; margin-left: 10px">
         <p>Page created by: Dominik Radziszewski</p>

@@ -19,14 +19,17 @@
         <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
     </section>
-    <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white">
+    <section style="font-size: 1.15rem; height: auto; width: fit-content; background: white; margin: 40px 30px 50px 30px; box-shadow: 0 0 40px black">
+        <img src="/media/header/tabela.png" style="display: flex">
+    </section>
+    <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white; box-shadow: 0 0 20px black">
             <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
     </section>
-    <section style="margin: 15px">
+    <section style="margin: 15px; height: auto; width: auto; background: transparent; box-shadow: 0 0 40px black; border-radius: 10px; border-style: solid">
         <div class="row">
             {% for mecz in mecze %}
               <div class="col-sm-4">
-                <div class="card" style="border-radius: 12px; margin-bottom: 25px; height: 340px; box-shadow: 0 0 20px black">
+                <div class="card" style="border-radius: 12px; margin: 10px 10px 20px 10px; height: 340px; box-shadow: 0 0 20px black">
                     <img src="/media/{{ mecz.opponent.miniature }}" class="card-img-top" alt="..." style="width: auto; height: 200px; border-radius: 12px 12px 0px 0px">
                     <div class="card-body" style="border-radius: 0px 0px 12px 12px; background: black">
                        <h5 class="card-title" style="color: white">{{ mecz }}</h5>
