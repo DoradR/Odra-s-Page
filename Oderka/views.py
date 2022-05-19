@@ -1,7 +1,7 @@
 import operator
 
 from django.shortcuts import render, get_object_or_404
-from .models import Match, Details, PicturesOfMatch, Club, Player
+from .models import Match, Details, PicturesOfMatch, Club, Player, Table
 
 
 def main_page(request):
@@ -11,7 +11,8 @@ def main_page(request):
 def matches_page(request):
     matches = Match.objects.all()
     sort = sorted(matches, key=operator.attrgetter('date'), reverse=True)
-    return render(request, 'mecze.html', {'mecze': sort})
+    table = Table.objects.all()
+    return render(request, 'mecze.html', {'mecze': sort, 'table': table})
 
 
 def details_page(request, id):

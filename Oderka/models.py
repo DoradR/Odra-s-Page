@@ -38,6 +38,20 @@ class Season(models.Model):
         return self.season
 
 
+class Table(models.Model):
+    season = models.ForeignKey(Season, on_delete=models.CASCADE)
+    club = models.ForeignKey(Club, on_delete=models.CASCADE)
+    wins = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    loses = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    draws = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+
+    def __str__(self):
+        return self.table()
+
+    def table(self):
+        return "{} {}".format(self.club, self.season)
+
+
 class Match(models.Model):
     opponent = models.ForeignKey(Club, on_delete=models.CASCADE)
     odraGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)

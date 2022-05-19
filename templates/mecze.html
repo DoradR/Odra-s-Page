@@ -21,6 +21,11 @@
     </section>
     <section style="font-size: 1.15rem; height: auto; width: fit-content; background: white; margin: 40px 30px 50px 30px; box-shadow: 0 0 40px black">
         <img src="/media/header/tabela.png" style="display: flex">
+        {% for club in table %}
+            <p>{{ club.club }} {{ club.wins }} {{ club.draws }} {{ club.loses }}</p>
+
+        {% endfor %}
+
     </section>
     <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white; box-shadow: 0 0 20px black">
             <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
