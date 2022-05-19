@@ -5,7 +5,7 @@ class Club(models.Model):
     pictureOfClub = models.ImageField(upload_to="Logo", null=True, blank=True)
     miniature = models.ImageField(upload_to="Miniatures", null=True, blank=True)
     nameOfClub = models.CharField(max_length=32, null=False, blank=False)
-    description = models.TextField(max_length=255, null=True, blank=True)
+    description = models.TextField(max_length=516, null=True, blank=True)
 
     def __str__(self):
         return self.nameOfClub
@@ -31,11 +31,19 @@ class TypeOfDetails(models.Model):
         return "{}".format(self.type)
 
 
+class Season(models.Model):
+    season = models.CharField(max_length=32, null=False, blank=False)
+
+    def __str__(self):
+        return self.season
+
+
 class Match(models.Model):
     opponent = models.ForeignKey(Club, on_delete=models.CASCADE)
     odraGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     opponentGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE)
     result = models.ForeignKey(ResultOfMatch, on_delete=models.CASCADE)
     comment = models.TextField(max_length=516, null=False, blank=False)
 
@@ -52,6 +60,7 @@ class Player(models.Model):
     birth = models.DateField(null=True, blank=True)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="players_picture", null=True, blank=True)
+    numberOfPlayer = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
         return self.player_details()
@@ -65,7 +74,6 @@ class Details(models.Model):
     who = models.ForeignKey(Player, on_delete=models.CASCADE)
     minute = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
     match = models.ManyToManyField(Match)
-    numberOfPlayer = models.PositiveSmallIntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
         return self.match_details()

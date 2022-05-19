@@ -42,4 +42,5 @@ def help_page(request):
 def about_page(request):
     players = Player.objects.all()
     sortPlayers = sorted(players, key=operator.attrgetter('secondName'))
-    return render(request, 'about.html', {'players': sortPlayers})
+    clubs = Club.objects.all()
+    return render(request, 'about.html', {'players': sortPlayers, 'clubs': clubs})
