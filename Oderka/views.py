@@ -12,7 +12,8 @@ def matches_page(request):
     matches = Match.objects.all()
     sort = sorted(matches, key=operator.attrgetter('date'), reverse=True)
     table = Table.objects.all()
-    return render(request, 'mecze.html', {'mecze': sort, 'table': table})
+    sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
+    return render(request, 'mecze.html', {'mecze': sort, 'table': sortTable})
 
 
 def details_page(request, id):

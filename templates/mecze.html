@@ -19,14 +19,65 @@
         <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
         <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
     </section>
-    <section style="font-size: 1.15rem; height: auto; width: fit-content; background: white; margin: 40px 30px 50px 30px; box-shadow: 0 0 40px black">
-        <img src="/media/header/tabela.png" style="display: flex">
-        {% for club in table %}
-            <p>{{ club.club }} {{ club.wins }} {{ club.draws }} {{ club.loses }}</p>
-
-        {% endfor %}
-
-    </section>
+    <div class="row" style="--bs-gutter-x: 0;">
+        <div class="col-sm-3" style="margin: 0px">
+        </div>
+        <div class="col-sm-6">
+            <section style="height: auto; background: white; margin-top: 40px; margin-bottom: 50px; box-shadow: 0 0 40px black">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <a>L.p.</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a>Nazwa</a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a>M.</a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a><b>Pkt.</b></a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a>W.</a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a>R.</a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a>P.</a>
+                    </div>
+                </div>
+                <hr style="margin: auto">
+                {% for club in table %}
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a>{{ i }}</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a>{{ club.club }}</a>
+                        </div>
+                        <div class="col-sm-1">
+                            <a>{{ club.matches }}</a>
+                        </div>
+                        <div class="col-sm-1">
+                            <a><b>{{ club.points }}</b></a>
+                        </div>
+                        <div class="col-sm-1">
+                            <a>{{ club.wins }}</a>
+                        </div>
+                        <div class="col-sm-1">
+                            <a>{{ club.draws }}</a>
+                        </div>
+                        <div class="col-sm-1">
+                            <a>{{ club.loses }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
     <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white; box-shadow: 0 0 20px black">
             <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
     </section>
