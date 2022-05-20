@@ -25,51 +25,72 @@
         <div class="col-sm-6">
             <section style="height: auto; background: white; margin-top: 40px; margin-bottom: 50px; box-shadow: 0 0 40px black">
                 <div class="row">
-                    <div class="col-sm-1">
+                    <div class="col-sm-1" style="width: 4.333333%">
                         <a>L.p.</a>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <a>Nazwa</a>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-1" style="width: 4.333333%">
                         <a>M.</a>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-1" style="width: 4.333333%">
                         <a><b>Pkt.</b></a>
                     </div>
-                    <div class="col-sm-1">
-                        <a>W.</a>
+                    <div class="col-sm-1" style="width: 4.333333%">
+                        <a style="color: #325c13">Z.</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a>R.</a>
+                    <div class="col-sm-1" style="width: 4.333333%">
+                        <a style="color: #1b4fc3">R.</a>
                     </div>
-                    <div class="col-sm-1">
-                        <a>P.</a>
+                    <div class="col-sm-1" style="width: 4.333333%">
+                        <a style="color: #e3300f">P.</a>
+                    </div>
+                    <div class="col-sm-1" style="width: 4.333333%">
+                        <a style="color: #e3300f">P.</a>
+                    </div>
+                    <div class="col-sm-1" style="width: 4.333333%">
+                        <a style="color: #e3300f">P.</a>
                     </div>
                 </div>
                 <hr style="margin: auto">
                 {% for club in table %}
                     <div class="row">
-                        <div class="col-sm-1">
+                        <div class="col-sm-1" style="width: 4.333333%">
                             <a>{{ i }}</a>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <a>{{ club.club }}</a>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1" style="width: 4.333333%">
                             <a>{{ club.matches }}</a>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1" style="width: 4.333333%">
                             <a><b>{{ club.points }}</b></a>
                         </div>
-                        <div class="col-sm-1">
-                            <a>{{ club.wins }}</a>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #325c13">{{ club.wins }}</a>
                         </div>
-                        <div class="col-sm-1">
-                            <a>{{ club.draws }}</a>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #1b4fc3">{{ club.draws }}</a>
                         </div>
-                        <div class="col-sm-1">
-                            <a>{{ club.loses }}</a>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
+                        </div>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
+                        </div>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
+                        </div>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
+                        </div>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
+                        </div>
+                        <div class="col-sm-1" style="width: 4.333333%">
+                            <a style="color: #e3300f">{{ club.loses }}</a>
                         </div>
                     </div>
                 {% endfor %}
