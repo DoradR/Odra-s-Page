@@ -41,9 +41,16 @@ class Season(models.Model):
 class Table(models.Model):
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
-    wins = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
-    draws = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
-    loses = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    winsHome = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    drawsHome = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    losesHome = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    shotGoalsHome = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    lostGoalsHome = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    winsAway = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    drawsAway = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    losesAway = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    shotGoalsAway = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
+    lostGoalsAway = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
 
 
     def __str__(self):
@@ -51,6 +58,26 @@ class Table(models.Model):
 
     def table(self):
         return "{} {}".format(self.club, self.season)
+
+    @property
+    def wins(self):
+        return self.winsHome + self.winsAway
+
+    @property
+    def loses(self):
+        return self.losesHome + self.losesAway
+
+    @property
+    def draws(self):
+        return self.drawsHome + self.drawsAway
+
+    @property
+    def shotGoals(self):
+        return self.shotGoalsHome + self.shotGoalsAway
+
+    @property
+    def lostGoals(self):
+        return self.lostGoalsHome + self.lostGoalsAway
 
     @property
     def points(self):
