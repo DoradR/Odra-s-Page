@@ -1,0 +1,14 @@
+body {
+    font-family: Arial;
+    background: radial-gradient(farthest-corner at 40px 40px, #035824 20%, #a4cc0c 100%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+section.header {
+    background: transparent;
+    color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
