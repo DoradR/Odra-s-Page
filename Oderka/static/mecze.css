@@ -74,22 +74,83 @@ section.who div.col-sm-0-5 {
     padding-left: 0;
 }
 
-p.win {
+a.win {
     color: #325c13;
     margin-bottom: 0;
+    text-decoration: none;
 }
 
-p.draw {
+a.draw {
     color: #1b4fc3;
     margin-bottom: 0;
+    text-decoration: none;
 }
 
-p.lose {
+a.lose {
     color: #e3300f;
     margin-bottom: 0;
+    text-decoration: none;
 }
 
-p.goals {
+a.goals {
     color: black;
     margin-bottom: 0;
+    text-decoration: none;
+}
+
+section.menu {
+    background: transparent;
+    border-style: outset;
+    margin: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    box-shadow: 0 0 20px black
+}
+
+section.menu h2 {
+    margin: 15px auto 15px 15px;
+}
+
+section.matches {
+    margin: 15px;
+    height: auto;
+    width: auto;
+    background: transparent;
+    box-shadow: 0 0 40px black;
+    border-radius: 10px;
+    border-style: solid
+}
+
+section.matches div.card {
+    border-radius: 12px;
+    margin: 10px 10px 20px 10px;
+    height: 340px;
+    box-shadow: 0 0 20px black
+}
+
+section.matches img {
+    width: auto;
+    height: 200px;
+    border-radius: 12px 12px 0px 0px
+}
+
+section.matches div.card-body {
+    border-radius: 0px 0px 12px 12px;
+    background: black
+}
+
+section.matches div.card-title {
+    color: white;
+}
+
+section.who-create {
+    font-size: 0.7rem;
+    align-items: baseline;
+    color: bisque;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-left: 10px
 }
