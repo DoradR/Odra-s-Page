@@ -1,7 +1,6 @@
 {% load static %}
 
 <!doctype html>
-{% load bootstrap %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,155 +16,164 @@
 </head>
 <body>
     <section class="header">
-        <a href="{% url 'main_page' %}" style="margin-right: auto; margin-left: 15px"><img src="/media/header/oderkaNaglowek.png" style="width: 400px"></a>
-        <h2 style="margin: 15px"><a href="{% url 'about_page' %}" style="text-decoration: none; color: bisque"><b>O nas</b></a></h2>
-        <h2 style="margin: 15px"><a href="{% url 'matches_page' %}" style="text-decoration: none; color: bisque"><b>Mecze</b></a></h2>
-        <h2 style="margin: 15px"><a href="{% url 'help_page' %}" style="text-decoration: none; color: bisque"><b>Kontakt</b></a></h2>
+        <a href="{% url 'main_page' %}"><img src="/media/header/oderkaNaglowek.png"></a>
+        <h2><a href="{% url 'about_page' %}"><b>O nas</b></a></h2>
+        <h2><a href="{% url 'matches_page' %}"><b>Mecze</b></a></h2>
+        <h2><a href="{% url 'help_page' %}"><b>Kontakt</b></a></h2>
     </section>
-    <div class="row" style="--bs-gutter-x: 0;">
-        <div class="col-sm-2" style="margin: 0px">
+    <section class="table">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <section class="content-of-table">
+                    <section class="where">
+                        <div class="row">
+                            <div class="col-sm-6">
+                            </div>
+                            <div class="col-sm-2">
+                                <h6><b>RAZEM</b></h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6><b>DOM</b></h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6><b>WYJAZD</b></h6>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="what">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <a>L.p.</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a>Nazwa</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a>M.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a><b>Pkt.</b></a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #325c13">Z.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #1b4fc3">R.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #e3300f">P.</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a style="color: black">Bramki</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #325c13">Z.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #1b4fc3">R.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #e3300f">P.</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a style="color: black">Bramki</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #325c13">Z.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #1b4fc3">R.</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a style="color: #e3300f">P.</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <a style="color: black">Bramki</a>
+                            </div>
+                        </div>
+                    </section>
+                    <hr>
+                    <section class="who">
+                        {% for club in table %}
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <a></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>{{ club.club }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p>{{ club.matches }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p><b>{{ club.points }}</b></p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="win">{{ club.wins }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="draw">{{ club.draws }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="lose">{{ club.loses }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.shotGoals }}</p>
+                                </div>
+                                <div class="col-sm-0-5">
+                                    <p class="goals">-</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.lostGoals }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="win">{{ club.winsHome }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="draw">{{ club.drawsHome }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="lose">{{ club.losesHome }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.shotGoalsHome }}</p>
+                                </div>
+                                <div class="col-sm-0-5">
+                                    <p class="goals">-</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.lostGoalsHome }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="win">{{ club.winsAway }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="draw">{{ club.drawsAway }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="lose">{{ club.losesAway }}</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.shotGoalsAway }}</p>
+                                </div>
+                                <div class="col-sm-0-5">
+                                    <p class="goals">-</p>
+                                </div>
+                                <div class="col-sm-1">
+                                    <p class="goals">{{ club.lostGoalsAway }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    </section>
+                </section>
+            </div>
+            <div class="col-sm-2">
+            </div>
         </div>
-        <div class="col-sm-8">
-            <section style="height: auto; background: #a3e1e3; margin-top: 40px; margin-bottom: 50px; box-shadow: 0 0 40px black">
-                <div class="row">
-                    <div class="col-sm-6" style="width: 45%">
-                    </div>
-                    <div class="col-sm-2" style="display: flex; justify-content: center">
-                        <h6><b>RAZEM</b></h6>
-                    </div>
-                    <div class="col-sm-2" style="display: flex; justify-content: center">
-                        <h6><b>DOM</b></h6>
-                    </div>
-                    <div class="col-sm-2" style="display: flex; justify-content: center">
-                        <h6><b>WYJAZD</b></h6>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a>L.p.</a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a>Nazwa</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a>M.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a><b>Pkt.</b></a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #325c13">Z.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #1b4fc3">R.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #e3300f">P.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 7.666666%">
-                        <a style="color: black">Bramki</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #325c13">Z.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #1b4fc3">R.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #e3300f">P.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 7.666666%">
-                        <a style="color: black">Bramki</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #325c13">Z.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #1b4fc3">R.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 3.333333%">
-                        <a style="color: #e3300f">P.</a>
-                    </div>
-                    <div class="col-sm-1" style="width: 7.666666%">
-                        <a style="color: black">Bramki</a>
-                    </div>
-                </div>
-                <hr style="margin: auto">
-                {% for club in table %}
-                    <div class="row">
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a>{{ i }}</a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a>{{ club.club }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a>{{ club.matches }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a><b>{{ club.points }}</b></a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #325c13">{{ club.wins }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #1b4fc3">{{ club.draws }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #e3300f">{{ club.loses }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.shotGoals }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 1%; padding-right: 0">
-                            <a style="color: black">-</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.lostGoals }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #325c13">{{ club.winsHome }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #1b4fc3">{{ club.drawsHome }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #e3300f">{{ club.losesHome }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.shotGoalsHome }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 1%; padding-right: 0">
-                            <a style="color: black">-</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.lostGoalsHome }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #325c13">{{ club.winsAway }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #1b4fc3">{{ club.drawsAway }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: #e3300f">{{ club.losesAway }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.shotGoalsAway }}</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 1%; padding-right: 0">
-                            <a style="color: black">-</a>
-                        </div>
-                        <div class="col-sm-1" style="width: 3.333333%">
-                            <a style="color: black">{{ club.lostGoalsAway }}</a>
-                        </div>
-                    </div>
-                {% endfor %}
-            </section>
-        </div>
-        <div class="col-sm-2">
-        </div>
-    </div>
+    </section>
     <section style="background: transparent; border-style: outset; margin: 25px; border-radius: 10px; display: flex; justify-content: flex-end; color: white; box-shadow: 0 0 20px black">
             <h2 style="margin: 15px auto 15px 15px">Wszystkie</h2>
     </section>

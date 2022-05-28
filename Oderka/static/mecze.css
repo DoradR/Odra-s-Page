@@ -12,3 +12,84 @@ section.header {
     align-items: center;
     justify-content: center
 }
+
+section.header img {
+    width: 400px;
+}
+
+section.header a {
+    margin-right: auto;
+    margin-left: 15px;
+    text-decoration: none;
+    color: bisque
+}
+
+section.header h2 {
+    margin: 15px
+}
+
+section.table div.row {
+    --bs-gutter-x: 0;
+}
+
+section.table div.col-sm-2 {
+    margin: 0;
+}
+
+section.content-of-table {
+    height: auto;
+    background: #a3e1e3;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 40px black
+}
+
+section.where div.col-sm-6 {
+    width: 45%
+}
+
+section.where div.col-sm-2 {
+    display: flex;
+    justify-content: center
+}
+section.what div.col-sm-1 {
+    width: 3.333333%
+}
+
+section.what div.col-sm-2 {
+    width: 7.666666%
+}
+
+section.content-of-table hr {
+    margin: 0;
+}
+
+section.who div.col-sm-1 {
+    width: 3.333333%;
+}
+
+section.who div.col-sm-0-5 {
+    width: 1%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+p.win {
+    color: #325c13;
+    margin-bottom: 0;
+}
+
+p.draw {
+    color: #1b4fc3;
+    margin-bottom: 0;
+}
+
+p.lose {
+    color: #e3300f;
+    margin-bottom: 0;
+}
+
+p.goals {
+    color: black;
+    margin-bottom: 0;
+}
