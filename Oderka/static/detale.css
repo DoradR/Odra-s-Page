@@ -1,0 +1,82 @@
+section.result {
+    margin: 25px;
+}
+
+section.result div.col-sm-5 {
+    display: flex;
+    justify-content: center;
+}
+
+section.result div.col-sm-5 img {
+    width: 200px;
+    height: 200px;
+}
+
+section.result div.col-sm-2 {
+    display: flex;
+    justify-content: center;
+}
+
+section.result div.win {
+    font-family: initial;
+    margin-top: 25px;
+}
+
+div.win h1 {
+    font-size: 4rem;
+    color: #02dcff;
+}
+
+div.win h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: bisque;
+}
+
+section.result div.lose {
+    font-family: initial;
+    margin-top: 25px;
+}
+
+div.lose h1 {
+    font-size: 4rem;
+    color: #fd3131;
+}
+
+div.lose h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: bisque;
+}
+
+section.result div.draw {
+    font-family: initial;
+    margin-top: 25px;
+    color: bisque;
+}
+
+div.draw h1 {
+    font-size: 4rem;
+}
+
+div.draw h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+section.title-of-row {
+    margin: 0 30px;
+    font-family: 'Bookman Old Style';
+    color: midnightblue;
+    background: white;
+    box-shadow: 0 0 40px black;
+    border-radius: 5px 5px 0 0;
+}
+
+section.title-of-row div.col-sm-6 {
+    display: flex;
+    justify-content: center;
+}
