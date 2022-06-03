@@ -43,20 +43,20 @@
                 </div>
             </div>
         </section>
-        <section style="background: white; margin: 0 30px 30px 30px; box-shadow: 0 0 40px black">
+        <section class="carousel-and-comment">
             <div class="row">
                 <div class="col-sm-6">
-                    <section style="display: flex; justify-content: center; margin: 10px 15px 10px 15px; border-radius: 15px; background: transparent">
+                    <section class="carousel-pictures">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-inner">
                           {% for match in matches %}
                             <div class="carousel-item active">
-                              <img src="/media/{{ match.miniature }}" class="d-block w-100" style="width: 90%; height: 500px; border-radius: 10px" alt="Zdjęcie przedstawiające miniaturkę spotkania">
+                              <img src="/media/{{ match.miniature }}" class="d-block w-100" alt="Zdjęcie przedstawiające miniaturkę spotkania">
                             </div>
                           {% endfor %}
                             {% for picture in pictures %}
                               <div class="carousel-item">
-                                <img src="/media/{{ picture }}" class="d-block w-100" style="width: 90%; height: 500px; border-radius: 10px" alt="Zdjęcie z meczu.">
+                                <img src="/media/{{ picture }}" class="d-block w-100" alt="Zdjęcie z meczu.">
                               </div>
                             {% endfor %}
                           </div>
@@ -72,92 +72,86 @@
                     </section>
                 </div>
                 <div class="col-sm-6">
-                    <section style="margin-bottom: 10px">
-                        <section style="margin: 10px; border-radius: 10px; background: transparent; height: 500px; display: flex; justify-content: center; align-items: center">
-                            <p style="margin: 0 25px; color: black; font-size: 1.5rem; font-family: Century">{{ comment }}</p>
-                        </section>
+                    <section class="comment">
+                        <p>{{ comment }}</p>
                     </section>
                 </div>
             </div>
         </section>
-        <section style="margin: 50px 30px 0 30px; font-family: 'Bookman Old Style'; color: midnightblue; background: white; box-shadow: 0 0 40px black; border-radius: 5px 5px 0 0">
-            <div style="display: flex; justify-content: center">
-                <h1>PRZEBIEG:</h1>
-            </div>
+        <section class="head-of-details">
+            <h1>PRZEBIEG:</h1>
         </section>
-        <section style="height: auto; width: auto; background: white; margin: 0 30px 50px 30px; box-shadow: 0 0 40px black">
+        <section class="details">
             <div class="row">
                 <div class="col-sm-1">
-
                 </div>
                 <div class="col-sm-5">
-                    <section>
-                        <h3 style="display: flex; justify-content: center; align-items: center"><img src="/media/Logo/slup.png" alt="Herb drużyny LZS Odra Słup" style="width: 50px; height: 50px">LZS Odra Słup</h3>
+                    <section class="who">
+                        <h3><img src="/media/Logo/slup.png" alt="Herb drużyny LZS Odra Słup">LZS Odra Słup</h3>
                     </section>
-                    <hr style="color: black">
+                    <hr>
                     <section>
                         {% for detal in detale %}
                             {% if detal.type.type == "GOL" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                             {% if detal.type.type == "ŻÓŁTA KARTKA" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "CZERWONA KARTKA" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                             {% if detal.type.type == "SCHODZI" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "WCHODZI" %}
                                 {% if detal.who.club.nameOfClub == "LZS Odra Słup" %}
-                                <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                     </section>
                 </div>
                 <div class="col-sm-5">
-                    <section>
-                        <h3 style="display: flex; justify-content: center; align-items: center"><img src="/media/{{ opponent.pictureOfClub }}" alt="Herb drużyny przeciwnej" style="width: 50px; height: 50px">{{ opponent }}</h3>
+                    <section class="who">
+                        <h3><img src="/media/{{ opponent.pictureOfClub }}" alt="Herb drużyny przeciwnej">{{ opponent }}</h3>
                     </section>
-                    <hr style="color: black">
+                    <hr>
                     <section>
                         {% for detal in detale %}
                             {% if detal.type.type == "GOL" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-futbol"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                             {% if detal.type.type == "ŻÓŁTA KARTKA" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-paste" style="color: yellow"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "CZERWONA KARTKA" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-paste" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                             {% if detal.type.type == "SCHODZI" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                    <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
+                                    <p><i class="fa-solid fa-circle-arrow-left" style="color: red"></i> {{ detal }}</p>
                                 {% endif %}
                             {% elif detal.type.type == "WCHODZI" %}
                                 {% if detal.who.club.nameOfClub != "LZS Odra Słup" %}
-                                <p style="display: flex; justify-content: center; margin: 10px 25px; color: black; font-size: 1.1rem"><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
+                                <p><i class="fa-solid fa-circle-arrow-right" style="color: #015001"></i> {{ detal }}</p>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
                     </section>
                 </div>
                 <div class="col-sm-1">
-
                 </div>
             </div>
         </section>

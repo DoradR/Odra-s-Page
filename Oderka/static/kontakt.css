@@ -1,0 +1,64 @@
+section.help {
+    font-size: 1.15rem;
+    height: auto;
+    width: auto;
+    background: white;
+    margin: 40px 30px 50px 30px;
+    box-shadow: 0 0 40px black;
+}
+
+div.col-sm-4-help {
+    width: 33.333333%;
+}
+
+div.col-sm-4-help i.fa-solid {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    padding: 25px;
+    color: #b5a812;
+}
+
+section.help div.window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-style: outset;
+    color: black;
+    margin: 25px;
+    border-radius: 25px;
+    height: 300px;
+    box-shadow: 0 0 40px black;
+}
+
+section.help p {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+div.col-sm-4-cooperation {
+    width: 33.333333%;
+}
+
+div.col-sm-4-cooperation i.fa-solid {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    padding: 25px;
+    color: #001685;
+}
+
+div.col-sm-4-sponsorship {
+    width: 33.333333%;
+}
+
+div.col-sm-4-sponsorship i.fa-solid {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    padding: 25px;
+    color: #0e7408;
+}

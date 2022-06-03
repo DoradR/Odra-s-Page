@@ -1,0 +1,81 @@
+section.head-of-description {
+    margin: 25px;
+    border-radius: 5px;
+    font-family: 'Bookman Old Style';
+    background: transparent;
+    color: midnightblue;
+    display: flex;
+    justify-content: center;
+}
+
+section.description {
+    height: auto;
+    width: auto;
+    background: transparent;
+    margin: 40px 30px 50px 30px;
+    box-shadow: 0 0 40px black;
+    color: white;
+}
+
+section.description img {
+    width: 300px;
+    height: 300px;
+}
+
+section.description h4 {
+    padding: 2rem;
+    font-size: 1.75rem
+}
+
+section.section-of-players {
+    margin: 15px;
+    font-family: 'system-ui';
+}
+
+section.head-of-players {
+    margin: 25px;
+    border-radius: 5px;
+    font-family: 'Bookman Old Style';
+    background: transparent;
+    color: midnightblue;
+    display: flex;
+    justify-content: center;
+}
+
+section.players {
+    height: auto;
+    width: auto;
+    background: transparent;
+    border-style: solid;
+    margin: 10px 30px 50px 30px;
+    box-shadow: 0 0 40px black;
+}
+
+section.players div.card {
+    border-radius: 12px;
+    margin: 12px;
+    box-shadow: 0 0 20px black;
+    background: black;
+    color: white;
+    border-color: #145a0c;
+}
+
+section.players div.col-sm-4 img {
+    width: 230px;
+    height: 300px;
+    border-radius: 12px 0px 0px 12px;
+}
+
+section.players div.col-sm-8 h2 {
+    margin: 20px 20px 20px 25px;
+}
+
+section.players div.col-sm-8 h3 {
+    margin: 20px 20px 20px 25px;
+    color: red;
+}
+
+section.players div.col-sm-8 h4 {
+    margin: 20px 20px 10px 25px;
+    color: #cbcaca;
+}

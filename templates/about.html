@@ -5,58 +5,54 @@
 {% block static %}<link rel="stylesheet" href="{% static 'about.css' %}">{% endblock %}
 
 {% block body %}
-    <section style="margin: 25px; border-radius: 5px; font-family: 'Bookman Old Style'; background: transparent; color: midnightblue">
-            <div style="display: flex; justify-content: center">
-                <h1>PARE SŁÓW NA NASZ TEMAT</h1>
-            </div>
-        </section>
-    <section style="height: auto; width: auto; background: transparent; margin: 40px 30px 50px 30px; box-shadow: 0 0 40px black; color: white">
+    <section class="head-of-description">
+        <h1>PARE SŁÓW NA NASZ TEMAT</h1>
+    </section>
+    <section class="description">
         {% for club in clubs %}
             {% if club.nameOfClub == 'LZS Odra Słup' %}
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="/media/Logo/slup.png" style="width: 300px; height: 300px">
+                        <img src="/media/Logo/slup.png">
                     </div>
                     <div class="col-sm-9">
-                        <h4 style="padding: 2rem; font-size: 1.75rem">{{ club.description }}</h4>
+                        <h4>{{ club.description }}</h4>
                     </div>
                 </div>
             {% endif %}
         {% endfor %}
     </section>
-    <section style="margin: 15px; font-family: 'system-ui'">
-        <section style="margin: 25px; border-radius: 5px; font-family: 'Bookman Old Style'; background: transparent; color: midnightblue">
-            <div style="display: flex; justify-content: center">
-                <h1>ZAWODNICY</h1>
-            </div>
+    <section class="section-of-players">
+        <section class="head-of-players">
+            <h1>ZAWODNICY</h1>
         </section>
-        <section style="height: auto; width: auto; background: transparent; border-style: solid; margin: 10px 30px 50px 30px; box-shadow: 0 0 40px black">
+        <section class="players">
             <div class="row">
                 {% for player in players %}
                     {% if player.club.nameOfClub == 'LZS Odra Słup' %}
                       <div class="col-sm-6">
-                        <div class="card" style="border-radius: 12px; margin: 12px; box-shadow: 0 0 20px black; background: black; color: white; border-color: #145a0c;">
+                        <div class="card">
                             <div class="row">
                                 <div class="col-sm-4">
                                     {% if player.image.url is not None %}
-                                        <img src="/media/{{ player.image }}" class="card-img-top" alt="..." style="width: 230px; height: 300px; border-radius: 12px 0px 0px 12px">
+                                        <img src="/media/{{ player.image }}" class="card-img-top" alt="...">
                                     {% else %}
-                                        <img src="/media/header/profil.jpg" class="card-img-top" alt="..." style="width: 230px; height: 300px; border-radius: 12px 0px 0px 12px">
+                                        <img src="/media/header/profil.jpg" class="card-img-top" alt="...">
                                     {% endif %}
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="card-body">
                                        {% if player.secondName == 'Kąkol' %}
-                                           <h2 class="card-title" style="margin: 20px 20px 20px 25px">{{ player }}</h2>
-                                           <h3 class="card-text" style="margin: 20px 20px 20px 25px; color: red"><i class="fa-solid fa-ring"></i> KAPITAN</h3>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Numer zawodnika: {{ player.numberOfPlayer }}</h4>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Klub: {{ player.club }}</h4>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Data urodzenia: {{ player.birth }}</h4>
+                                           <h2 class="card-title">{{ player }}</h2>
+                                           <h3 class="card-text"><i class="fa-solid fa-ring"></i> KAPITAN</h3>
+                                           <h4 class="card-text">Numer zawodnika: {{ player.numberOfPlayer }}</h4>
+                                           <h4 class="card-text">Klub: {{ player.club }}</h4>
+                                           <h4 class="card-text">Data urodzenia: {{ player.birth }}</h4>
                                        {% else %}
-                                           <h2 class="card-title" style="margin: 20px 20px 20px 25px">{{ player }}</h2>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Numer zawodnika: {{ player.numberOfPlayer }}</h4>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Klub: {{ player.club }}</h4>
-                                           <h4 class="card-text" style="margin: 20px 20px 20px 25px; color: #cbcaca">Data urodzenia: {{ player.birth }}</h4>
+                                           <h2 class="card-title">{{ player }}</h2>
+                                           <h4 class="card-text">Numer zawodnika: {{ player.numberOfPlayer }}</h4>
+                                           <h4 class="card-text">Klub: {{ player.club }}</h4>
+                                           <h4 class="card-text">Data urodzenia: {{ player.birth }}</h4>
                                        {% endif %}
                                     </div>
                                 </div>
