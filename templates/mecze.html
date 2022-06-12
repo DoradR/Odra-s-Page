@@ -5,6 +5,17 @@
 {% block static %}<link rel="stylesheet" href="{% static 'mecze.css' %}">{% endblock %}
 
 {% block body %}
+    <section class="head-of-table">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <h1>TABELA WYNIKÓW</h1>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </section>
     <section class="table">
         <div class="row">
             <div class="col-sm-2">
@@ -14,6 +25,16 @@
                     <section class="where">
                         <div class="row">
                             <div class="col-sm-6">
+                                <div class="btn-group">
+                                  <button class="btn btn-outline-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sezon
+                                  </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                  </ul>
+                                </div>
                             </div>
                             <div class="col-sm-2">
                                 <h6><b>RAZEM</b></h6>

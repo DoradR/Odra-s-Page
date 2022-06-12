@@ -2,10 +2,11 @@ from django.db import models
 
 
 class Club(models.Model):
-    pictureOfClub = models.ImageField(upload_to="Logo", null=True, blank=True)
+    logoOfClub = models.ImageField(upload_to="Logo", null=True, blank=True)
     miniature = models.ImageField(upload_to="Miniatures", null=True, blank=True)
     nameOfClub = models.CharField(max_length=32, null=False, blank=False)
     description = models.TextField(max_length=516, null=True, blank=True)
+    pictureOfClub = models.ImageField(upload_to="Picture Of Club", null=True, blank=True)
 
     def __str__(self):
         return self.nameOfClub

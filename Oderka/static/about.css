@@ -1,20 +1,27 @@
 section.head-of-description {
-    margin: 25px;
-    border-radius: 5px;
-    font-family: 'Bookman Old Style';
-    background: transparent;
     color: midnightblue;
     display: flex;
     justify-content: center;
+    margin: 50px 30px 0 30px;
+    font-family: 'Bookman Old Style';
+    background: white;
+    box-shadow: 0 0 40px black;
+    border-radius: 5px 5px 0 0;
 }
 
 section.description {
     height: auto;
     width: auto;
-    background: transparent;
-    margin: 40px 30px 50px 30px;
+    background: white;
+    margin: 0 30px 50px 30px;
     box-shadow: 0 0 40px black;
-    color: white;
+    color: black;
+}
+
+section.description div.col-sm-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
 }
 
 section.description img {
@@ -24,7 +31,10 @@ section.description img {
 
 section.description h4 {
     padding: 2rem;
-    font-size: 1.75rem
+    font-size: 1.75rem;
+    border-radius: 5px;
+    border-style: outset;
+    margin: 5px;
 }
 
 section.section-of-players {
@@ -33,21 +43,21 @@ section.section-of-players {
 }
 
 section.head-of-players {
-    margin: 25px;
-    border-radius: 5px;
-    font-family: 'Bookman Old Style';
-    background: transparent;
     color: midnightblue;
     display: flex;
     justify-content: center;
+    margin: 50px 30px 0 30px;
+    font-family: 'Bookman Old Style';
+    background: white;
+    box-shadow: 0 0 40px black;
+    border-radius: 5px 5px 0 0;
 }
 
 section.players {
     height: auto;
     width: auto;
-    background: transparent;
-    border-style: solid;
-    margin: 10px 30px 50px 30px;
+    background: white;
+    margin: 0 30px 50px 30px;
     box-shadow: 0 0 40px black;
 }
 
@@ -61,7 +71,7 @@ section.players div.card {
 }
 
 section.players div.col-sm-4 img {
-    width: 230px;
+    width: 214px;
     height: 300px;
     border-radius: 12px 0px 0px 12px;
 }

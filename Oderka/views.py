@@ -5,7 +5,8 @@ from .models import Match, Details, PicturesOfMatch, Club, Player, Table
 
 
 def main_page(request):
-    return render(request, 'stronaglowna.html')
+    club = Club.objects.all()
+    return render(request, 'stronaglowna.html', {'club': club})
 
 
 def matches_page(request):

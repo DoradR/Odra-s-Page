@@ -1,0 +1,25 @@
+section.head-of-photo {
+    margin: 50px 30px 0 30px;
+    font-family: 'Bookman Old Style';
+    color: midnightblue;
+    background: white;
+    box-shadow: 0 0 40px black;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+section.photo {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    background: white;
+    margin: 0 30px 50px 30px;
+    box-shadow: 0 0 40px black;
+}
+
+section.photo img {
+    width: -webkit-fill-available;
+    margin: 5px;
+}

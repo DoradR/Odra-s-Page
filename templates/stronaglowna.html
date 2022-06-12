@@ -5,7 +5,14 @@
 {% block static %}<link rel="stylesheet" href="{% static 'stronaglowna.css' %}">{% endblock %}
 
 {% block body %}
-    <section style="display: flex; justify-content: center; width: 100%">
-        <h1> miejsce na zdjecie drużynowe </h1>
+    <section class="head-of-photo">
+        <h1> LZS ODRA SŁUP </h1>
+    </section>
+    <section class="photo">
+        {% for i in club %}
+            {% if i.nameOfClub == 'LZS Odra Słup' %}
+                <img src="/media/{{ i.pictureOfClub }}">
+            {% endif %}
+        {% endfor %}
     </section>
 {% endblock %}
