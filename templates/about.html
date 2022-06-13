@@ -27,6 +27,7 @@
             <h1>ZAWODNICY</h1>
         </section>
         <section class="players">
+        <div class="container-fluid">
             <div class="row">
                 {% for player in players %}
                     {% if player.club.nameOfClub == 'LZS Odra Słup' %}
@@ -62,6 +63,7 @@
                     {% endif %}
                 {% endfor %}
             </div>
+        </div>
         </section>
     </section>
 {% endblock %}

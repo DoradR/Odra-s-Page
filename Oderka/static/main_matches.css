@@ -1,0 +1,42 @@
+section.head-of-seasons div.col-sm-3{
+    color: midnightblue;
+    font-family: 'Bookman Old Style';
+    background: white;
+    box-shadow: 0 0 40px black;
+    border-radius: 5px 5px 0 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.head-of-seasons div.row {
+    --bs-gutter-x: 0;
+}
+
+section.seasons div.col-sm-3 {
+    height: auto;
+    background: white;
+    margin-bottom: 30px;
+    box-shadow: 0 0 40px black;
+}
+
+
+section.seasons div.row {
+    --bs-gutter-x: 0;
+}
+
+section.seasons a {
+    margin-right: auto;
+    text-decoration: none;
+    color: #001fff;
+    display: flex;
+    justify-content: center;
+}
+
+section.seasons h2 {
+    margin: 5px;
+    border-top: black;
+    border-top-style: double;
+    padding: 0.4rem;
+}

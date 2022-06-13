@@ -1,7 +1,7 @@
 import operator
 
 from django.shortcuts import render, get_object_or_404
-from .models import Match, Details, PicturesOfMatch, Club, Player, Table
+from .models import Match, Details, PicturesOfMatch, Club, Player, Table, Season
 
 
 def main_page(request):
@@ -9,12 +9,23 @@ def main_page(request):
     return render(request, 'stronaglowna.html', {'club': club})
 
 
-def matches_page(request):
-    matches = Match.objects.all()
-    sort = sorted(matches, key=operator.attrgetter('date'), reverse=True)
-    table = Table.objects.all()
+def matches_page(request, id):
+    seasons = get_object_or_404(Season, pk=id)
+    mecze = Match.objects.filter(season=seasons)
+    sortMecze = sorted(mecze, key=operator.attrgetter('date'),reverse=True)
+    table = Table.objects.filter(season=seasons)
     sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
-    return render(request, 'mecze.html', {'mecze': sort, 'table': sortTable})
+    season = seasons.season
+
+    if request.method == "POST":
+        seasons.objects.filter(id)
+
+    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season})
+
+
+def main_matches_page(request):
+    seasons = Season.objects.all().order_by('season').reverse()
+    return render(request, 'main_matches.html', {'seasons': seasons})
 
 
 def details_page(request, id):

@@ -1,12 +1,13 @@
 section.head-of-table div.col-sm-8 {
     color: midnightblue;
-    display: flex;
-    justify-content: center;
     font-family: 'Bookman Old Style';
     background: #a3e1e3;
     box-shadow: 0 0 40px black;
     border-radius: 5px 5px 0 0;
     margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 section.head-of-table div.row {
@@ -15,12 +16,6 @@ section.head-of-table div.row {
 
 section.head-of-table div.col-sm-2 {
     margin: 0;
-}
-
-section.head-of-table div.col-sm-8 {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 section.table div.row {
@@ -40,9 +35,6 @@ section.content-of-table {
 
 section.where div.col-sm-6 {
     width: 43%;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 15px;
 }
 
 section.where div.col-sm-2 {

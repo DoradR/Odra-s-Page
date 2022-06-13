@@ -94,7 +94,7 @@ class Match(models.Model):
     odraGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     opponentGoal = models.PositiveSmallIntegerField(default=0, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
-    season = models.ForeignKey(Season, on_delete=models.CASCADE)
+    season = models.ManyToManyField(Season)
     result = models.ForeignKey(ResultOfMatch, on_delete=models.CASCADE)
     comment = models.TextField(max_length=516, null=False, blank=False)
 
@@ -102,7 +102,7 @@ class Match(models.Model):
         return self.match_result()
 
     def match_result(self):
-        return "{} - LZS Odra Słup {} : {} {}".format(self.date, self.odraGoal, self.opponentGoal, self.opponent)
+        return "({}) -- LZS Odra Słup {} : {} {}".format(self.date, self.odraGoal, self.opponentGoal, self.opponent)
 
 
 class Player(models.Model):

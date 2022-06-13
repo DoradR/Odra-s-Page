@@ -1,0 +1,32 @@
+{% extends 'glowny.html' %}
+{% load static %}
+
+{% block tytul %}Mecze{% endblock %}
+{% block static %}<link rel="stylesheet" href="{% static 'main_matches.css' %}">{% endblock %}
+
+{% block body %}
+    <section class="head-of-seasons">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-sm-3">
+            <h1>WYBIERZ SEZON</h1>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </section>
+    <section class="seasons">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-sm-3">
+                {% for sezon in seasons %}
+                    <h2><a href="{% url 'matches_page' sezon.id %}"><b>{{ sezon }}</b></a></h2>
+                {% endfor %}
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </section>
+{% endblock %}
