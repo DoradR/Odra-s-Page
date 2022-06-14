@@ -9,23 +9,69 @@ def main_page(request):
     return render(request, 'stronaglowna.html', {'club': club})
 
 
+def main_matches_page(request):
+    seasons = Season.objects.all().order_by('season').reverse()
+    return render(request, 'main_matches.html', {'seasons': seasons})
+
+
 def matches_page(request, id):
     seasons = get_object_or_404(Season, pk=id)
     mecze = Match.objects.filter(season=seasons)
     sortMecze = sorted(mecze, key=operator.attrgetter('date'),reverse=True)
     table = Table.objects.filter(season=seasons)
     sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
-    season = seasons.season
+    season = Season.objects.all().order_by('season').reverse()
+    which = seasons.season
 
     if request.method == "POST":
         seasons.objects.filter(id)
 
-    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season})
+    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season, 'which': which})
 
 
-def main_matches_page(request):
-    seasons = Season.objects.all().order_by('season').reverse()
-    return render(request, 'main_matches.html', {'seasons': seasons})
+def wins_page(request, id):
+    seasons = get_object_or_404(Season, pk=id)
+    mecze = Match.objects.filter(season=seasons, result=2)
+    sortMecze = sorted(mecze, key=operator.attrgetter('date'),reverse=True)
+    table = Table.objects.filter(season=seasons)
+    sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
+    season = Season.objects.all().order_by('season').reverse()
+    which = seasons.season
+
+    if request.method == "POST":
+        seasons.objects.filter(id)
+
+    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season, 'which': which})
+
+
+def draws_page(request, id):
+    seasons = get_object_or_404(Season, pk=id)
+    mecze = Match.objects.filter(season=seasons, result=3)
+    sortMecze = sorted(mecze, key=operator.attrgetter('date'),reverse=True)
+    table = Table.objects.filter(season=seasons)
+    sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
+    season = Season.objects.all().order_by('season').reverse()
+    which = seasons.season
+
+    if request.method == "POST":
+        seasons.objects.filter(id)
+
+    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season, 'which': which})
+
+
+def loses_page(request, id):
+    seasons = get_object_or_404(Season, pk=id)
+    mecze = Match.objects.filter(season=seasons, result=1)
+    sortMecze = sorted(mecze, key=operator.attrgetter('date'),reverse=True)
+    table = Table.objects.filter(season=seasons)
+    sortTable = sorted(table, key=operator.attrgetter('points'), reverse=True)
+    season = Season.objects.all().order_by('season').reverse()
+    which = seasons.season
+
+    if request.method == "POST":
+        seasons.objects.filter(id)
+
+    return render(request, 'mecze.html', {'mecze': sortMecze, 'table': sortTable, 'season': season, 'which': which})
 
 
 def details_page(request, id):

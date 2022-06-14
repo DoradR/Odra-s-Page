@@ -1,3 +1,9 @@
+section.change-season {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+}
+
 section.head-of-table div.col-sm-8 {
     color: midnightblue;
     font-family: 'Bookman Old Style';
@@ -97,14 +103,12 @@ section.menu {
     border-style: outset;
     margin: 25px;
     border-radius: 10px;
-    display: flex;
-    justify-content: flex-end;
     color: white;
     box-shadow: 0 0 20px black
 }
 
-section.menu h2 {
-    margin: 15px auto 15px 15px;
+section.menu button {
+    color: white;
 }
 
 section.matches {

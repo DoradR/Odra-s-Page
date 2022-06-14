@@ -5,12 +5,24 @@
 {% block static %}<link rel="stylesheet" href="{% static 'mecze.css' %}">{% endblock %}
 
 {% block body %}
+    <section class="change-season">
+        <div class="btn-group">
+          <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Zmień sezon
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              {% for sezon in season %}
+                <li><a class="dropdown-item" href="{% url 'matches_page' sezon.id %}">{{ sezon }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+    </section>
     <section class="head-of-table">
         <div class="row">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-8">
-                <h1>TABELA WYNIKÓW {{ season }}</h1>
+                <h1>TABELA WYNIKÓW {{ which }}</h1>
             </div>
             <div class="col-sm-2">
             </div>
@@ -39,9 +51,6 @@
                     </section>
                     <section class="what">
                         <div class="row">
-                            <div class="col-sm-1">
-                                <a>L.p.</a>
-                            </div>
                             <div class="col-sm-4">
                                 <a>Nazwa</a>
                             </div>
@@ -93,9 +102,6 @@
                     <section class="who">
                         {% for club in table %}
                             <div class="row">
-                                <div class="col-sm-1">
-                                    <a></a>
-                                </div>
                                 <div class="col-sm-4">
                                     <a>{{ club.club }}</a>
                                 </div>
@@ -170,7 +176,20 @@
         </div>
     </section>
     <section class="menu">
-            <h2>Wszystkie</h2>
+        <div class="btn-group">
+          <button class="btn btn-outline-success btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Filtruj
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              {% for sezon in season %}
+                <li><a class="dropdown-item" href="{% url 'matches_page' sezon.id %}">Wszystkie</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'wins_page' sezon.id %}">Wygrane</a></li>
+                <li><a class="dropdown-item" href="{% url 'draws_page' sezon.id %}">Remisy</a></li>
+                <li><a class="dropdown-item" href="{% url 'loses_page' sezon.id %}">Przegrane</a></li>
+              {% endfor %}
+          </ul>
+        </div>
     </section>
     <section class="matches">
         <div class="row">
